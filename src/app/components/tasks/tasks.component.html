@@ -1,0 +1,11 @@
+<div class="form" *ngFor="let task of tasks; let i = index">
+    <div [ngClass]="task.checked ? 'checked' : ''" style="display: flex">
+        <div class="round">
+            <input type="checkbox" [id]="task._id" [(ngModel)]="task.checked" (ngModelChange)="checkTask(task)"/>
+            <label [htmlFor]="task._id"></label>
+        </div>
+        <span>{{task.text}}</span>
+        <fa-icon [icon]="faTrashAlt" (click)="delTask(task.index)"></fa-icon>
+    </div>
+</div>
+

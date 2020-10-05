@@ -1,0 +1,27 @@
+button {
+    font-size: 12px;
+    background: none;
+    border: none;
+    outline: none;
+    color: grey;
+    margin: 5px;
+    padding: 5px;
+}
+button:hover {
+    color: black;
+    cursor: pointer;
+}
+
+input {
+    display: none;
+}
+label {
+    margin: 5px;
+    font-size: 12px;
+    padding: 5px;
+    cursor: pointer;
+}
+label.selected {
+    border-radius: 5px;
+    border: 1px solid grey;
+}

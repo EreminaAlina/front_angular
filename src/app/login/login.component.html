@@ -1,0 +1,60 @@
+<div class="logForm">
+    <div class="frame">
+        <p>{{signingIn ? 'Sign In' : 'Register'}}</p>
+        <div class="inputs">
+
+            <form [formGroup]="loginFormGroup">
+                <div class="md-form">
+                    <label for="inputEmail">Email</label>
+                    <input mdbInput
+                           name="input1"
+                           type="email"
+                           class="form-control"
+                           id="inputEmail"
+                           autocomplete="off"
+                           formControlName="login"
+                    >
+                    <mdb-error [ngClass]="logIsValid ? 'info' : ''"
+                               *ngIf="loginFormGroup.controls['login'].invalid
+                    && (loginFormGroup.controls['login'].dirty || loginFormGroup.controls['login'].touched)">
+                        {{logIsValid ? 'Enter your email' : 'Wrong type'}}
+                    </mdb-error>
+
+                    <mdb-success *ngIf="loginFormGroup.controls['login'].valid
+                    && (loginFormGroup.controls['login'].dirty || loginFormGroup.controls['login'].touched)">
+                        Email is valid</mdb-success>
+                </div>
+
+                <div class="md-form">
+                    <label for="inputPassword">Password</label>
+                    <input mdbInput mdbValidate
+                           name="input2"
+                           type="password"
+                           class="form-control"
+                           id="inputPassword"
+                           autocomplete="off"
+                           formControlName="password"
+                    >
+                    <mdb-error [ngClass]="passIsValid ? 'info' : ''"
+                               *ngIf="loginFormGroup.controls['password'].invalid
+                    && (loginFormGroup.controls['password'].dirty || loginFormGroup.controls['password'].touched)">
+                        {{passIsValid ? 'type big and small and num' : 'Wrong type'}}
+                    </mdb-error>
+
+                    <mdb-success *ngIf="loginFormGroup.controls['password'].valid
+                    && (loginFormGroup.controls['password'].dirty || loginFormGroup.controls['password'].touched)">
+                        Password is valid</mdb-success>
+                </div>
+            </form>
+
+        </div>
+        <div class="btn-form" style="display: flex; justify-content: space-between; width: 100%">
+            <button class="btn btn-link" (click)="switchSigning()">Sign {{signingIn ? 'Up' : 'In'}}</button>
+            <button class="btn btn-success" *ngIf="signingIn" (click)="signIn()">Sign in</button>
+            <button class="btn  btn-success" *ngIf="!signingIn" (click)="saveUser()">Registration</button>
+        </div>
+    </div>
+
+</div>
+
+

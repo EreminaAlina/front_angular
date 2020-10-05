@@ -1,0 +1,25 @@
+<div style="display: flex; margin-top: 10px">
+    <div>
+        <button (click)="ctrlA()">
+            {{ items }} tasks left
+        </button>
+    </div>
+    <div style="display: flex">
+        <div style="display: flex">
+            <input type="radio" id="contactChoice1"
+                   name="contact" value="all" [(ngModel)]="model" (ngModelChange)="filterTasks()" [checked]="true">
+            <label [ngClass]="model === 'all' ? 'selected' : ''" for="contactChoice1">All</label>
+
+            <input type="radio" id="contactChoice2"
+                   name="contact" value="todo" [(ngModel)]="model" (ngModelChange)="filterTasks()">
+            <label [ngClass]="model === 'todo' ? 'selected' : ''" for="contactChoice2">ToDo</label>
+
+            <input type="radio" id="contactChoice3"
+                   name="contact" value="completed" [(ngModel)]="model" (ngModelChange)="filterTasks()">
+            <label [ngClass]="model === 'completed' ? 'selected' : ''" for="contactChoice3">Completed</label>
+        </div>
+    </div>
+    <div>
+        <button (click)="clearCompleted()">Clear completed</button>
+    </div>
+</div>
