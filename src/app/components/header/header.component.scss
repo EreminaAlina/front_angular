@@ -1,5 +1,5 @@
 @use "src/styles";
-@import "src/styles";
+@import "../../../styles";
 
 .head{
     display: flex;
@@ -7,7 +7,7 @@
     width: 100%;
 
     //@include styles.mode(red, black);
-    background-color: styles.$name;
+    @include styles.mode;
 
     h1{
         font:{
@@ -22,7 +22,7 @@
         width: 74px;
         margin-top: 20px;
         border-color: grey;
-        padding: 0px;
+        padding: 0;
     }
 }
 
@@ -43,7 +43,7 @@ p{
         justify-content: space-between;
         width: 210px;
         &.changemod{
-            @include styles.mode(black, white);
+            @include styles.mode;
         }
     }
     span{

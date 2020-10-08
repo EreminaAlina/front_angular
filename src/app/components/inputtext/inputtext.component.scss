@@ -1,3 +1,6 @@
+@use "src/styles";
+@import "../../../styles";
+
 input{
     width: 360px;
     margin: 10px;
@@ -9,6 +12,7 @@ input{
             width: 1px;
         }
     }
+
     &:focus{
         outline: none !important;
     }

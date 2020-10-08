@@ -12,6 +12,8 @@ export class HeaderComponent implements OnInit {
   constructor(private router: Router) { }
 
   ngOnInit(): void {
+      document.documentElement.style.setProperty('--primary-colorr', this.checked ? 'grey' : 'white');
+      document.documentElement.style.setProperty('--secondary-colorr', this.checked ? 'white' : 'grey');
   }
 
   logOut(){
@@ -19,6 +21,7 @@ export class HeaderComponent implements OnInit {
     return this.router.navigate(['/login'])
   }
   changeMod(){
-
+      document.documentElement.style.setProperty('--primary-colorr', this.checked ? 'grey' : 'white');
+      document.documentElement.style.setProperty('--secondary-colorr', this.checked ? 'white' : 'grey');
   }
 }
