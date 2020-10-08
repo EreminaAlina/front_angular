@@ -1,0 +1,91 @@
+$bgc: #fff;
+.form{
+    margin: 10px 0px;
+    padding-top: 15px;
+    width: 100%;
+    padding-bottom: 7px;
+    border-bottom:{
+        style: solid;
+        width: 1px;
+        color: darkgray;
+    }
+
+
+    .checked {
+        color: gray;
+        text-decoration : line-through {
+            color: gray;
+        }
+    }
+
+    .round {
+        position: relative;
+        margin-left: 2px;
+
+        input[type="checkbox"] {
+            visibility: hidden;
+        }
+        input[type="checkbox"]:checked + label {
+            #{$bgc}: #ffffff;
+            border-color: #808080;
+        }
+        input[type="checkbox"]:checked + label:after {
+            opacity: 1;
+        }
+
+        label {
+            border: 1px solid #ccc{
+                radius: 50%;
+            }
+            background-color:$bgc;
+            cursor: pointer;
+            height: 20px;
+            left: 0;
+            position: absolute;
+            top: 0;
+            width: 20px;
+
+            &:after {
+                border: 2px solid #07a800{
+                    top: none;
+                    right: none;
+                }
+                content: "";
+                height: 5px;
+                left: 4px;
+                opacity: 0;
+                position: absolute;
+                top: 4px;
+                transform: rotate(-45deg);
+                width: 10px;
+            }
+        }
+    }
+    span{
+        width: 320px;
+        margin-left: 5px;
+    }
+
+    .trigger{
+        width: 20px;
+        margin: 0px 5px 0px 5px;
+    }
+
+    input{
+        margin-left: 10px;
+    }
+
+    label {
+        font-size: 10px;
+        width: 130px;
+    }
+
+    fa-icon {
+        color: grey;
+        cursor: pointer;
+    }
+}
+
+
+
+

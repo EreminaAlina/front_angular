@@ -4,4 +4,6 @@ export interface ToDo {
     checked: boolean;
     index: number;
     user?: string;
+    taskTime?: Date;
+    estimated?: boolean;
 }

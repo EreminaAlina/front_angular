@@ -12,7 +12,7 @@ import {
 @Component({
     selector: 'login',
     templateUrl: './login.component.html',
-    styleUrls: ['./login.component.css'],
+    styleUrls: ['./login.component.scss'],
     host: {
         class: 'login_component'
     },
@@ -46,13 +46,13 @@ export class LoginComponent implements OnInit {
 
     initForm() {
         this.loginFormGroup = this.formBuilder.group({
-            login: ['',
+            login: ['fff1@fff.com',
                 [
                     Validators.required,
                     Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,3}$'),
                 ]
             ],
-            password: ['',
+            password: ['Pass1231',
                 [
                     Validators.required,
                     Validators.pattern("^(?=.*\\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\\s).{6,20}$")
@@ -77,6 +77,8 @@ export class LoginComponent implements OnInit {
                 (data: LoginResponse) => {
                     localStorage.setItem('user', data.user.login);
                     localStorage.setItem('userId', data.user._id);
+                    localStorage.setItem('access_token', data.user.access_token);
+                    localStorage.setItem('refresh_token', data.user.refresh_token);
                     this.toastr.success(`Signed in as ${data.user.login}`, 'SUCCESS');
                     return this.router.navigate(['/']);
                 },

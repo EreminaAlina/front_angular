@@ -4,9 +4,10 @@ import {Router} from "@angular/router";
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
-  styleUrls: ['./header.component.css']
+  styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
+  checked: boolean= true;
 
   constructor(private router: Router) { }
 
@@ -17,5 +18,7 @@ export class HeaderComponent implements OnInit {
     localStorage.clear();
     return this.router.navigate(['/login'])
   }
+  changeMod(){
 
+  }
 }

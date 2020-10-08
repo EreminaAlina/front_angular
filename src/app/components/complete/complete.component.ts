@@ -4,7 +4,7 @@ import {TaskService} from "../../services/task.service";
 @Component({
     selector: 'app-complete',
     templateUrl: './complete.component.html',
-    styleUrls: ['./complete.component.css']
+    styleUrls: ['./complete.component.scss']
 })
 export class CompleteComponent implements OnInit {
     items: number = 0;

@@ -6,22 +6,27 @@ button {
     color: grey;
     margin: 5px;
     padding: 5px;
-}
-button:hover {
-    color: black;
-    cursor: pointer;
+    &:hover {
+        color: black;
+        cursor: pointer;
+    }
 }
 
 input {
     display: none;
 }
+
 label {
     margin: 5px;
     font-size: 12px;
     padding: 5px;
     cursor: pointer;
-}
-label.selected {
-    border-radius: 5px;
-    border: 1px solid grey;
+    .selected {
+        border: {
+            width: 1px;
+            style: solid;
+            color: grey;
+            radius: 5px;
+        }
+    }
 }

@@ -41,9 +41,7 @@ export class TaskService {
 
     selectTask(task) {
         this.sendUnchecked();
-        const headers = new HttpHeaders({'Authorization': 'JWT token'});
-        this.http.put('http://localhost:1234/todo/select/task', task, {headers})
-            .subscribe();
+        this.http.put('http://localhost:1234/todo/select/task', task).subscribe();
     }
 
     sendUnchecked() {
@@ -102,5 +100,8 @@ export class TaskService {
             }, (err) => {
 
             });
+    }
+    setTime(task){
+        this.http.put('http://localhost:1234/todo/time', task).subscribe()
     }
 }

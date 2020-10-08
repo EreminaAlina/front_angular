@@ -1,3 +1,16 @@
+<div class="custom-control custom-switch">
+    <label [ngClass]="checked ? 'changemod' : ''" for="customSwitch1">
+        Dark mode
+        <input
+               type="checkbox"
+               class="custom-control-input"
+               id="customSwitch1"
+               [(ngModel)]="checked"
+               (ngModelChange)="changeMod()"
+        >
+        <span class="custom-control-label" for="customSwitch1"></span> Light mode
+    </label>
+</div>
 <div class = 'head'>
     <h1>Your todo list </h1>
     <button class="btn" (click)="logOut()">Log Out</button>

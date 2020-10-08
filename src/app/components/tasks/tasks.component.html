@@ -1,11 +1,25 @@
-<div class="form" *ngFor="let task of tasks; let i = index">
+<div class="form" [ngClass]="task.estimated ? 'red': ''" *ngFor="let task of tasks; let i = index">
     <div [ngClass]="task.checked ? 'checked' : ''" style="display: flex">
         <div class="round">
             <input type="checkbox" [id]="task._id" [(ngModel)]="task.checked" (ngModelChange)="checkTask(task)"/>
             <label [htmlFor]="task._id"></label>
         </div>
         <span>{{task.text}}</span>
+
+        <input
+               style="visibility: hidden; width: 0"
+               [owlDateTime]="dt1"
+               [ngModel]="task.taskTime"
+               (ngModelChange)="task.taskTime = $event"
+               (dateTimeChange)="setTime(task, $event)" >
+        <label>{{task.taskTime | date: 'dd/MM/yyyy HH:mm'}}</label>
+        <span class="trigger" [owlDateTimeTrigger]="dt1" >
+            <i class="fas fa-calendar-alt"></i>
+            </span>
+        <owl-date-time #dt1></owl-date-time>
+
         <fa-icon [icon]="faTrashAlt" (click)="delTask(task.index)"></fa-icon>
     </div>
+
 </div>
 

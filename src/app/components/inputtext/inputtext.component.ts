@@ -4,7 +4,7 @@ import {TaskService} from "../../services/task.service";
 @Component({
     selector: 'app-inputtext',
     templateUrl: './inputtext.component.html',
-    styleUrls: ['./inputtext.component.css']
+    styleUrls: ['./inputtext.component.scss']
 })
 export class InputtextComponent {
     text:string;

@@ -16,6 +16,7 @@ import {ToastrModule} from "ngx-toastr";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {MDBBootstrapModule} from 'angular-bootstrap-md';
 import { AuthInterceptorService } from './auth-inspector.service';
+import { OwlDateTimeModule, OwlNativeDateTimeModule } from 'ng-pick-datetime';
 
 
 @NgModule({
@@ -28,7 +29,9 @@ import { AuthInterceptorService } from './auth-inspector.service';
         HttpClientModule,
         BrowserAnimationsModule,
         ToastrModule.forRoot(),
-        MDBBootstrapModule.forRoot()
+        MDBBootstrapModule.forRoot(),
+        OwlDateTimeModule,
+        OwlNativeDateTimeModule,
     ],
     declarations: [
         AppComponent,

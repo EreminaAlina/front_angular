@@ -1,0 +1,53 @@
+@use "src/styles";
+@import "src/styles";
+
+.head{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+
+    //@include styles.mode(red, black);
+    background-color: styles.$name;
+
+    h1{
+        font:{
+            family: 'Lato', sans-serif;
+            size: 38px;
+        }
+        margin-top: 10px;
+    }
+
+    .btn{
+        height: 25px;
+        width: 74px;
+        margin-top: 20px;
+        border-color: grey;
+        padding: 0px;
+    }
+}
+
+p{
+    display: flex;
+    justify-content: flex-end;
+    margin-top: -20px;
+    font-size: 15px;
+    color: grey;
+}
+
+.custom-control {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    label{
+        display: flex;
+        justify-content: space-between;
+        width: 210px;
+        &.changemod{
+            @include styles.mode(black, white);
+        }
+    }
+    span{
+        margin-left: 50px;
+    }
+}
+

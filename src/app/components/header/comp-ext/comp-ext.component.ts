@@ -3,7 +3,7 @@ import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 @Component({
   selector: 'comp-ext',
   templateUrl: './comp-ext.component.html',
-  styleUrls: ['./comp-ext.component.css']
+  styleUrls: ['./comp-ext.component.scss']
 })
 export class CompExtComponent implements OnInit {
 

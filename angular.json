@@ -1,55 +1,65 @@
 {
-  "version": 1,
-  "projects": {
-    "newapp": {
-      "projectType": "application",
-      "root": "",
-      "sourceRoot": "src",
-      "architect": {
-        "build": {
-          "builder": "@angular-devkit/build-angular:browser",
-          "options": {
-            "outputPath": "dist/newapp",
-            "index": "src/index.html",
-            "main": "src/main.ts",
-            "polyfills": "src/polyfills.ts",
-            "tsConfig": "tsconfig.json",
-            "aot": true,
-            "styles": [
-              "node_modules/@fortawesome/fontawesome-free/scss/fontawesome.scss",
-              "node_modules/@fortawesome/fontawesome-free/scss/solid.scss",
-              "node_modules/@fortawesome/fontawesome-free/scss/regular.scss",
-              "node_modules/@fortawesome/fontawesome-free/scss/brands.scss",
-              "node_modules/angular-bootstrap-md/assets/scss/bootstrap/bootstrap.scss",
-              "node_modules/angular-bootstrap-md/assets/scss/mdb.scss",
-              "node_modules/animate.css/animate.css",
-              "src/styles.css",
-              "node_modules/ngx-toastr/toastr.css"
-            ],
-            "scripts": [
-              "node_modules/chart.js/dist/Chart.js",
-              "node_modules/hammerjs/hammer.min.js"
-            ]
-          },
-
-          "configurations": {
-            "production": {
-              "optimization": true,
-              "outputHashing": "all",
-              "sourceMap": false,
-              "namedChunks": false,
-              "vendorChunk": false,
-              "buildOptimizer": true
-            }
-          }
-        },
-        "serve": {
-          "builder": "@angular-devkit/build-angular:dev-server",
-          "options": {
-            "browserTarget": "newapp:build"
-          }
-        }
-      }
-    }},
-  "defaultProject": "newapp"
+	"version": 1,
+	"projects": {
+		"newapp": {
+			"projectType": "application",
+			"root": "",
+			"sourceRoot": "src",
+			"architect": {
+				"build": {
+					"builder": "@angular-devkit/build-angular:browser",
+					"options": {
+						"outputPath": "dist/newapp",
+						"index": "src/index.html",
+						"main": "src/main.ts",
+						"polyfills": "src/polyfills.ts",
+						"tsConfig": "tsconfig.json",
+						"aot": true,
+						"styles": [
+							"node_modules/@fortawesome/fontawesome-free/scss/fontawesome.scss",
+							"node_modules/@fortawesome/fontawesome-free/scss/solid.scss",
+							"node_modules/@fortawesome/fontawesome-free/scss/regular.scss",
+							"node_modules/@fortawesome/fontawesome-free/scss/brands.scss",
+							"node_modules/angular-bootstrap-md/assets/scss/bootstrap/bootstrap.scss",
+							"node_modules/angular-bootstrap-md/assets/scss/mdb.scss",
+							"node_modules/animate.css/animate.css",
+							"src/styles.scss",
+							"node_modules/ngx-toastr/toastr.css"
+						],
+						"scripts": [
+							"node_modules/chart.js/dist/Chart.js",
+							"node_modules/hammerjs/hammer.min.js"
+						]
+					},
+					"configurations": {
+						"production": {
+							"optimization": true,
+							"outputHashing": "all",
+							"sourceMap": false,
+							"namedChunks": false,
+							"vendorChunk": false,
+							"buildOptimizer": true
+						}
+					}
+				},
+				"serve": {
+					"builder": "@angular-devkit/build-angular:dev-server",
+					"options": {
+						"browserTarget": "newapp:build"
+					}
+				}
+			},
+			"schematics": {
+				"@schematics/angular:component": {
+					"style": "scss"
+				}
+			}
+		}
+	},
+	"defaultProject": "newapp",
+	"schematics": {
+		"@schematics/angular:component": {
+			"style": "scss"
+		}
+	}
 }
