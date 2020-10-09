@@ -5,10 +5,7 @@
     display: flex;
     justify-content: space-between;
     width: 100%;
-
-    //@include styles.mode(red, black);
-    background-color: styles.$name;
-
+    @include styles.textTheme;
     h1{
         font:{
             family: 'Lato', sans-serif;
@@ -21,8 +18,9 @@
         height: 25px;
         width: 74px;
         margin-top: 20px;
-        border-color: grey;
         padding: 0px;
+        border: 1px solid;
+        @include styles.buttonTheme;
     }
 }
 
@@ -31,7 +29,6 @@ p{
     justify-content: flex-end;
     margin-top: -20px;
     font-size: 15px;
-    color: grey;
 }
 
 .custom-control {
@@ -42,9 +39,7 @@ p{
         display: flex;
         justify-content: space-between;
         width: 210px;
-        &.changemod{
-            @include styles.mode(black, white);
-        }
+        @include styles.textTheme;
     }
     span{
         margin-left: 50px;

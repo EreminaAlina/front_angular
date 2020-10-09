@@ -20,8 +20,12 @@ export class UserService {
 
     refreshToken() {
         const refresh_token: string = localStorage.getItem('refresh_token');
-        const body = {refresh_token}
-        return this.http.post('http://localhost:1234/user/token/refresh', body)
+        const body = {refresh_token};
+        return this.http.post('http://localhost:1234/user/token/refresh', body);
     }
 
+    saveTheme(theme){
+        const body = {theme};
+        return this.http.post('http://localhost:1234/user/selectTheme', body).subscribe();
+    }
 }

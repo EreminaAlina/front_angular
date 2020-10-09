@@ -4,4 +4,5 @@ export interface UserInterface {
     _id?: string;
     access_token?: string;
     refresh_token?: string;
+    theme?:string;
 }

@@ -65,8 +65,6 @@ export class TasksComponent implements OnInit, OnDestroy, AfterViewInit {
     }
 
     setTime(task, e){
-        console.log(e.value);
-        console.log(typeof e.value);
         this.taskService.setTime(task);
     }
 }

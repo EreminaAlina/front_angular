@@ -7,6 +7,7 @@ import {ToastrService} from "ngx-toastr";
 import {
     FormGroup, FormBuilder, Validators, FormControl,
 } from "@angular/forms";
+import {ThemeService} from "../services/theme.service";
 
 
 @Component({
@@ -36,7 +37,8 @@ export class LoginComponent implements OnInit {
         private userService: UserService,
         private router: Router,
         private toastr: ToastrService,
-        private formBuilder: FormBuilder
+        private formBuilder: FormBuilder,
+        private themeService: ThemeService,
     ) {
     }
 
@@ -46,13 +48,13 @@ export class LoginComponent implements OnInit {
 
     initForm() {
         this.loginFormGroup = this.formBuilder.group({
-            login: ['fff1@fff.com',
+            login: ['',
                 [
                     Validators.required,
                     Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,3}$'),
                 ]
             ],
-            password: ['Pass1231',
+            password: ['',
                 [
                     Validators.required,
                     Validators.pattern("^(?=.*\\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\\s).{6,20}$")
@@ -79,6 +81,8 @@ export class LoginComponent implements OnInit {
                     localStorage.setItem('userId', data.user._id);
                     localStorage.setItem('access_token', data.user.access_token);
                     localStorage.setItem('refresh_token', data.user.refresh_token);
+                    localStorage.setItem('theme', data.user.theme);
+
                     this.toastr.success(`Signed in as ${data.user.login}`, 'SUCCESS');
                     return this.router.navigate(['/']);
                 },

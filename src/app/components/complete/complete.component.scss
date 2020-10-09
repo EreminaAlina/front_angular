@@ -1,11 +1,14 @@
+@use "src/styles";
+@import "src/styles";
+
 button {
     font-size: 12px;
     background: none;
     border: none;
     outline: none;
-    color: grey;
-    margin: 5px;
+    margin: 5px 13px;
     padding: 5px;
+    @include styles.textTheme;
     &:hover {
         color: black;
         cursor: pointer;
@@ -21,11 +24,11 @@ label {
     font-size: 12px;
     padding: 5px;
     cursor: pointer;
-    .selected {
+    @include styles.textTheme;
+    &.selected {
         border: {
             width: 1px;
             style: solid;
-            color: grey;
             radius: 5px;
         }
     }

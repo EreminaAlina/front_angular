@@ -1,14 +1,11 @@
+@use "src/styles";
+@import "src/styles";
+
 input{
     width: 360px;
     margin: 10px;
     padding-bottom: 5px;
-    border: none{
-        bottom: {
-            style: solid;
-            color: darkgray;
-            width: 1px;
-        }
-    }
+    @include styles.inputTheme;
     &:focus{
         outline: none !important;
     }
