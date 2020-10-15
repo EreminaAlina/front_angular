@@ -6,30 +6,46 @@ button {
     background: none;
     border: none;
     outline: none;
-    margin: 5px 13px;
-    padding: 5px;
-    @include styles.textTheme;
-    &:hover {
-        color: black;
-        cursor: pointer;
-    }
-}
-
-input {
-    display: none;
-}
-
-label {
     margin: 5px;
-    font-size: 12px;
     padding: 5px;
-    cursor: pointer;
-    @include styles.textTheme;
-    &.selected {
-        border: {
-            width: 1px;
-            style: solid;
-            radius: 5px;
-        }
+    //@include styles.textTheme;
+    //&:hover {
+    //    color: black;
+    //    cursor: pointer;
+    //}
+}
+
+//input {
+//    display: none;
+//}
+
+//label {
+//    margin: 5px;
+//    font-size: 12px;
+//    padding: 5px;
+//    cursor: pointer;
+//    //@include styles.textTheme;
+//    &.selected {
+//        border: {
+//            width: 1px;
+//            style: solid;
+//            radius: 5px;
+//        }
+//    }
+//}
+
+.fontStyle{
+    margin: 5px;
+}
+
+::ng-deep mat-button-toggle {
+    font-size: 12px;
+
+    button:focus {
+        outline: none !important;
     }
+}
+
+.mat-button-toggle-button {
+    color: #46a35e !important;
 }

@@ -1,12 +1,30 @@
 @use "src/styles";
 @import "src/styles";
 
-input{
-    width: 360px;
-    margin: 10px;
-    padding-bottom: 5px;
-    @include styles.inputTheme;
-    &:focus{
-        outline: none !important;
-    }
+input {
+  margin: 3px;
+  border: none {
+
+  }
+  //@include styles.inputTheme;
+  &:focus {
+    outline: none !important;
+  }
+}
+
+.example-full-width{
+  font-size: 18px;
+  width: 380px;
+}
+
+.inputtext{
+  width: 200px;
+  & .mat-form-field{
+    width: 380px;
+    font-size: 16px;
+  }
+}
+
+textarea {
+  overflow: hidden !important;
 }

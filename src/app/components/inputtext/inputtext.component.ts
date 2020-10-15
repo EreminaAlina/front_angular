@@ -1,5 +1,7 @@
-import {Component} from '@angular/core';
+import {Component,  NgZone, ViewChild} from '@angular/core';
 import {TaskService} from "../../services/task.service";
+import {CdkTextareaAutosize} from '@angular/cdk/text-field';
+import {take} from 'rxjs/operators';
 
 @Component({
     selector: 'app-inputtext',
@@ -9,7 +11,7 @@ import {TaskService} from "../../services/task.service";
 export class InputtextComponent {
     text:string;
 
-    constructor(private taskService: TaskService) {
+    constructor(private taskService: TaskService, private _ngZone: NgZone) {
     }
 
     save() {
@@ -17,6 +19,13 @@ export class InputtextComponent {
             this.taskService.createTask(this.text);
             this.text = '';
         }
+    }
+    @ViewChild('autosize') autosize: CdkTextareaAutosize;
+
+    triggerResize() {
+        // Wait for changes to be applied, then trigger textarea resize.
+        this._ngZone.onStable.pipe(take(1))
+            .subscribe(() => this.autosize.resizeToFitContent(true));
     }
 
 }

@@ -11,21 +11,21 @@ export class UserService {
 
     signIn(user: UserInterface){
         const body = {login: user.login, password: user.password};
-        return this.http.post('http://localhost:1234/user/login', body);
+        return this.http.post('http://192.168.88.248:1234/user/login', body);
     }
 
     signUp(data){
-        return this.http.post('http://localhost:1234/user/signup', data)
+        return this.http.post('http://192.168.88.248:1234/user/signup', data)
     }
 
     refreshToken() {
         const refresh_token: string = localStorage.getItem('refresh_token');
         const body = {refresh_token};
-        return this.http.post('http://localhost:1234/user/token/refresh', body);
+        return this.http.post('http://192.168.88.248:1234/user/token/refresh', body);
     }
 
     saveTheme(theme){
         const body = {theme};
-        return this.http.post('http://localhost:1234/user/selectTheme', body).subscribe();
+        return this.http.post('http://192.168.88.248:1234/user/selectTheme', body).subscribe();
     }
 }

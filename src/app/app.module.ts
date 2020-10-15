@@ -17,7 +17,17 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {MDBBootstrapModule} from 'angular-bootstrap-md';
 import { AuthInterceptorService } from './auth-inspector.service';
 import { OwlDateTimeModule, OwlNativeDateTimeModule } from 'ng-pick-datetime';
-
+import { MenuComponent } from './components/menu/menu.component';
+import {StyleManagerService} from "./services/style-manager.service";
+import {MatInputModule} from "@angular/material/input";
+import {MatButtonToggleModule} from '@angular/material/button-toggle';
+import { ChatComponent } from './chat/chat.component';
+import {MatButtonModule} from "@angular/material/button";
+import {MatIconModule} from "@angular/material/icon";
+import {MatMenuModule} from "@angular/material/menu";
+import {MatToolbarModule} from "@angular/material/toolbar";
+import {SocketIoService} from "./services/socket.io.service";
+import {ScrollToBottomDirective} from "./directives/scroll-to-bottom.directive";
 
 @NgModule({
     imports: [
@@ -32,6 +42,12 @@ import { OwlDateTimeModule, OwlNativeDateTimeModule } from 'ng-pick-datetime';
         MDBBootstrapModule.forRoot(),
         OwlDateTimeModule,
         OwlNativeDateTimeModule,
+        MatButtonModule,
+        MatIconModule,
+        MatMenuModule,
+        MatToolbarModule,
+        MatInputModule,
+        MatButtonToggleModule,
     ],
     declarations: [
         AppComponent,
@@ -41,10 +57,14 @@ import { OwlDateTimeModule, OwlNativeDateTimeModule } from 'ng-pick-datetime';
         TasksComponent,
         CompExtComponent,
         LoginComponent,
-        ToDoComponent
+        ToDoComponent,
+        MenuComponent,
+        ChatComponent,
+        ScrollToBottomDirective
     ],
     providers: [
-        { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptorService, multi: true }
+        { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptorService, multi: true },
+        StyleManagerService
     ],
     bootstrap: [AppComponent]
 })

@@ -5,7 +5,7 @@
     display: flex;
     justify-content: space-between;
     width: 100%;
-    @include styles.textTheme;
+    //@include styles.textTheme;
     h1{
         font:{
             family: 'Lato', sans-serif;
@@ -20,7 +20,8 @@
         margin-top: 20px;
         padding: 0px;
         border: 1px solid;
-        @include styles.buttonTheme;
+
+        //@include styles.buttonTheme;
     }
 }
 
@@ -31,18 +32,29 @@ p{
     font-size: 15px;
 }
 
-.custom-control {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    label{
-        display: flex;
-        justify-content: space-between;
-        width: 210px;
-        @include styles.textTheme;
-    }
-    span{
-        margin-left: 50px;
-    }
+//.custom-control {
+//    position: absolute;
+//    top: 10px;
+//    right: 10px;
+//    label{
+//        display: flex;
+//        justify-content: space-between;
+//        width: 210px;
+//        //@include styles.textTheme;
+//    }
+//    span{
+//        margin-left: 50px;
+//    }
+//}
+
+.mat-button{
+    margin: 3px;
+
 }
 
+mat-toolbar-row{
+    position: absolute;
+    right: 0px;
+    margin: 10px;
+    cursor: pointer;
+}

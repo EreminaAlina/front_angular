@@ -28,7 +28,6 @@ export class TasksComponent implements OnInit, OnDestroy, AfterViewInit {
     }
 
     ngOnInit(): void {
-        console.log('ngOnInit');
         this.taskService.showTodo();
         this.taskService.tasksSubj.subscribe((tasks: ToDo[]) => {
             this.tasks = tasks;
@@ -36,7 +35,6 @@ export class TasksComponent implements OnInit, OnDestroy, AfterViewInit {
     }
 
     ngAfterViewInit(): void {
-        console.log('ngAfterViewInit');
         this.interval = setInterval(() => {
             this.checkTime()
         }, 1000)
@@ -45,7 +43,6 @@ export class TasksComponent implements OnInit, OnDestroy, AfterViewInit {
     }
 
     ngOnDestroy(): void {
-        console.log('ngOnDestroy');
         clearInterval(this.interval);
     }
 

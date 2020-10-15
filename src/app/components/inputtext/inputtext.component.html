@@ -1,6 +1,20 @@
-<div>
-        <input (keydown.enter)="save()"
-               [(ngModel)]="text"
-               type ="text" placeholder="Enter your task name here" maxlength="50"
-               autocomplete="off">
+<div class = "inputtext">
+<!--    <mat-form-field class="example-full-width">-->
+<!--        <mat-label>Enter your task name here</mat-label>-->
+<!--        <input matInput-->
+<!--               (keydown.enter)="save()"-->
+<!--               [(ngModel)]="text"-->
+<!--               type="text"-->
+<!--               autocomplete="off">-->
+<!--    </mat-form-field>-->
+    <mat-form-field>
+        <mat-label>Enter your task name here</mat-label>
+        <textarea matInput
+                  [(ngModel)]="text"
+                  (keydown.enter)="save()"
+                  cdkTextareaAutosize
+                  #autosize="cdkTextareaAutosize"
+                  cdkAutosizeMinRows="1"
+                  cdkAutosizeMaxRows="5"></textarea>
+    </mat-form-field>
 </div>

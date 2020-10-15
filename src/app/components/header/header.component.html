@@ -1,17 +1,29 @@
-<div class="custom-control custom-switch">
-    <label [ngClass]="checked ? 'changemod' : ''" for="customSwitch1">
-        Dark mode
-        <input
-               type="checkbox"
-               class="custom-control-input"
-               id="customSwitch1"
-               [(ngModel)]="checked"
-               (ngModelChange)="changeMod(checked)"
-        >
-        <span class="custom-control-label" for="customSwitch1"></span> Light mode
-    </label>
-</div>
-<div class = 'head'>
+<!--<div class="custom-control custom-switch">-->
+<!--    <label [ngClass]="checked ? 'changemod' : ''" for="customSwitch1">-->
+<!--        Dark mode-->
+<!--        <input-->
+<!--               type="checkbox"-->
+<!--               class="custom-control-input"-->
+<!--               id="customSwitch1"-->
+<!--               [(ngModel)]="checked"-->
+<!--               (ngModelChange)="changeMod(checked)"-->
+<!--        >-->
+<!--        <span class="custom-control-label" for="customSwitch1"></span> Light mode-->
+<!--    </label>-->
+<!--</div>-->
+
+
+<mat-toolbar-row>
+    <span class="spacer"></span>
+    <app-menu
+            [options]="options$ | async"
+            (themeChange)="themeChangeHandler($event)">
+    </app-menu>
+</mat-toolbar-row>
+
+
+<div class='head'>
     <h1>Your todo list </h1>
-    <button class="btn" (click)="logOut()">Log Out</button>
+    <button mat-button (click)="startChat()">Chat</button>
+    <button mat-button (click)="logOut()">Log Out</button>
 </div>

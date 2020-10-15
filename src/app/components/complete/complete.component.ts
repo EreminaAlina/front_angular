@@ -8,7 +8,7 @@ import {TaskService} from "../../services/task.service";
 })
 export class CompleteComponent implements OnInit {
     items: number = 0;
-    model = 'all';
+    value: string;
 
     constructor(private taskService: TaskService) {
     }
@@ -28,7 +28,7 @@ export class CompleteComponent implements OnInit {
         this.taskService.selectAll();
     }
 
-    filterTasks() {
-        this.taskService.showSelected(this.model);
+    filterTasks(value) {
+        this.taskService.showSelected(value);
     }
 }

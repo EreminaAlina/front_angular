@@ -1,0 +1,123 @@
+.header{
+  position: absolute;
+  right: 0px;
+  margin: 10px;
+}
+
+.frame{
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 400px;
+  box-shadow: 0 0 5px 1px #00000080;
+  padding: 10px;
+  border-radius: 5px;
+  margin-top: 60px;
+  min-height: 500px;
+
+}
+
+.chat{
+  position: relative;
+  border-radius: 3px;
+  width: 380px;
+  height: 440px;
+  background-color: white;
+  margin-bottom: 5px;
+  display: flex;
+  flex-direction: column;
+  color: black;
+  padding: 5px;
+  overflow-y: scroll;
+  &::-webkit-scrollbar {
+    width: 0;
+  }
+
+  .all {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+    max-width: 50%;
+    width: fit-content;
+    text-align: left;
+    padding: 0 5px;
+
+    &.right {
+      margin-left: auto;
+
+      .user {
+        text-align: right;
+      }
+      .message {
+        border-radius: 1rem 1rem  0 1rem;
+        background-color: #51af86;;
+            &::before{
+              position: absolute;
+              content: '';
+              bottom: 0;
+              left: initial;
+              right: 5px;
+              width: 0;
+              height: 0;
+              border: 10px solid transparent;
+              border-top-color: #51af86;
+              border-bottom: 0;
+              border-left: 0;
+              transform: rotate(90deg);
+              padding: 5px;
+
+            }
+      }
+    }
+
+     label {
+       margin: 0;
+       overflow: auto;
+       word-break: break-word;
+
+
+       &.user{
+         font-size: 12px;
+         background: none;
+       }
+       &.message {
+         background: #00e23a;
+         border-radius: 1rem 1rem  1rem 0rem;
+         font-size: 16px;
+         padding: 5px 10px;
+
+         &::before {
+           position: absolute;
+           content: '';
+           bottom: 0;
+           left: 15px;
+           width: 0;
+           height: 0;
+           border: 10px solid transparent;
+           border-top-color: #00e23a;
+           border-bottom: 0;
+           border-left: 0;
+           margin-left: -10px;
+           margin-bottom: -10px;
+         }
+         }
+       }
+     }
+  }
+
+
+input{
+  height: 30px;
+  border-radius: 3px;
+  outline: none;
+}
+
+.time{
+  text-align: end;
+  color: grey;
+  font-style: italic;
+  margin: 0;
+  font-size: 12px;
+}
+

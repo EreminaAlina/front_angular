@@ -1,0 +1,27 @@
+<div class='header'>
+    <label class="red" *ngIf="!socketStatus">Server is OFFLINE</label>
+    <button mat-button (click)="todos()">Back to ToDo</button>
+    <button mat-button (click)="logOut()">Log Out</button>
+</div>
+<div class="frame">
+    <div class="chat" scroll-to-bottom>
+        <div class="all" *ngFor="let message of messages, index as i"
+             [ngClass]="message.userName === userName ? 'right' : ''">
+            <label class="user"
+                   *ngIf="(messages[i-1] && messages[i-1].userName !== message.userName) || !messages[i-1]">
+                {{message.userName}}
+            </label>
+
+            <label class="message" *ngIf="message.message">{{message.message}}
+                <p class="time">{{message.time}}</p>
+            </label>
+        </div>
+    </div>
+
+    <input type="text" [(ngModel)]="text" (keyup.enter)="sendMessage()">
+
+</div>
+
+<div class="users">
+
+</div>

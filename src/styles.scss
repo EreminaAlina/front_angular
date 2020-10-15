@@ -10,50 +10,67 @@ login {
     height: 100%;
 }
 
-@mixin buttonTheme {
-    background-color:  var(--button-bg-color);
-    color: var(--text-color);
+//@mixin buttonTheme {
+//    background-color:  var(--button-bg-color);
+//    color: var(--text-color);
+//
+//}
+//@mixin textTheme {
+//    color: var(--text-color);
+//}
+//
+//@mixin backgroundColor {
+//    background-color:  var(--bg-color);
+//}
+//
+//@mixin inputTheme {
+//    background-color:  var(--bg-color);
+//    color: var(--text-color);
+//    border: none {
+//        bottom: {
+//            style: solid;
+//            width: 1px;
+//            color: var(--border-bottom-color);
+//        }
+//    }
+//}
+//
+//@mixin taskTheme {
+//    background-color:  var(--bg-color);
+//    border-bottom:{
+//        style: solid;
+//        width: 1px;
+//        color: var(--border-bottom-color);
+//    }
+//}
+//
+//@mixin decoration{
+//    text-decoration: line-through;
+//    color: var(--text-color);
+//}
+//
+//@mixin checkboxTheme{
+//    background-color:  var(--back-color);
+//    border: 1px solid{
+//        color: var(--border-color);
+//        radius: 50%;
+//    }
+//}
+//
 
-}
-@mixin textTheme {
-    color: var(--text-color);
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+app-tasks {
+    overflow-y: scroll;
+    max-height: 700px;
+    display: flex;
+    overflow-x: hidden;
+    flex-direction: column;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
 }
 
-@mixin backgroundColor {
-    background-color:  var(--bg-color);
+app-tasks::-webkit-scrollbar {
+    display: none;
 }
-
-@mixin inputTheme {
-    background-color:  var(--bg-color);
-    color: var(--text-color);
-    border: none {
-        bottom: {
-            style: solid;
-            width: 1px;
-            color: var(--border-bottom-color);
-        }
-    }
-}
-
-@mixin taskTheme {
-    background-color:  var(--bg-color);
-    border-bottom:{
-        style: solid;
-        width: 1px;
-        color: var(--border-bottom-color);
-    }
-}
-
-@mixin decoration{
-    text-decoration: line-through;
-    color: var(--text-color);
-}
-
-@mixin checkboxTheme{
-    background-color:  var(--back-color);
-    border: 1px solid{
-        color: var(--border-color);
-        radius: 50%;
-    }
-}
-

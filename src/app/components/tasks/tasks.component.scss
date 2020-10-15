@@ -1,87 +1,105 @@
 @use "src/styles";
 @import "src/styles";
 
-.form{
-    margin: 10px 0px;
-    padding-top: 15px;
-    width: 100%;
-    padding-bottom: 7px;
-    @include styles.taskTheme;
+.form {
+  margin: 10px 0px;
+  padding-top: 15px;
+  width: 100%;
+  padding-bottom: 7px;
+  border-bottom: {
+    style: solid;
+    width: 1px;
+    color: grey;
+  }
+  //@include styles.taskTheme;
 
 
-    .checked {
-        @include styles.decoration;
+  .checked {
+    color: darkgrey;
+    //@include styles.decoration;
+  }
+
+  .round {
+    position: relative;
+    margin-left: 2px;
+
+    input[type="checkbox"] {
+      visibility: hidden;
     }
 
-    .round {
-        position: relative;
-        margin-left: 2px;
-
-        input[type="checkbox"] {
-            visibility: hidden;
-        }
-        input[type="checkbox"]:checked + label {
-            @include styles.checkboxTheme;
-        }
-
-        input[type="checkbox"]:checked + label:after {
-            opacity: 1;
-        }
-
-        label {
-            @include styles.checkboxTheme;
-            cursor: pointer;
-            height: 20px;
-            left: 0;
-            position: absolute;
-            top: 0;
-            width: 20px;
-
-            &:after {
-                border: 2px solid #07a800{
-                    top: none;
-                    right: none;
+    input[type="checkbox"]:checked + label {
+        border: 1px solid{
+                    color: grey;
+                    radius: 50%;
                 }
-                content: "";
-                height: 5px;
-                left: 4px;
-                opacity: 0;
-                position: absolute;
-                top: 5px;
-                transform: rotate(-45deg);
-                width: 10px;
-            }
-        }
+      //@include styles.checkboxTheme;
     }
 
-
-    span{
-        width: 320px;
-        margin-left: 5px;
-        @include styles.textTheme;
-    }
-
-    .trigger{
-        width: 20px;
-        margin: 0px 5px 0px 5px;
-    }
-
-    input{
-        margin-left: 10px;
+    input[type="checkbox"]:checked + label:after {
+      opacity: 1;
     }
 
     label {
-        font-size: 10px;
-        @include styles.textTheme;
-        width: 130px;
-    }
+        border: 1px solid{
+            color: grey;
+            radius: 50%;
+        }
+      //@include styles.checkboxTheme;
+      cursor: pointer;
+      height: 20px;
+      left: 0;
+      position: absolute;
+      top: 0;
+      width: 20px;
 
-    fa-icon {
-        @include styles.textTheme;
-        cursor: pointer;
+      &:after {
+        border: 2px solid #07a800 {
+          top: none;
+          right: none;
+        }
+        content: "";
+        height: 5px;
+        left: 4px;
+        opacity: 0;
+        position: absolute;
+        top: 5px;
+        transform: rotate(-45deg);
+        width: 10px;
+      }
     }
+  }
+
+
+  span {
+    width: 200px;
+    margin-left: 5px;
+    //@include styles.textTheme;
+  }
+
+  .trigger {
+    width: 20px;
+    margin: 0px 5px 0px 5px;
+  }
+
+  input {
+    margin-left: 10px;
+  }
+
+  label {
+    font-size: 10px;
+    //@include styles.textTheme;
+    width: 85px;
+  }
+
+  fa-icon {
+    //@include styles.textTheme;
+    cursor: pointer;
+  }
 }
 
+textarea{
+  min-width: 180px;
+}
 
 
 
