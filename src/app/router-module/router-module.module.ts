@@ -7,7 +7,7 @@ import {ChatComponent} from "../chat/chat.component";
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
-  { path: 'chat', component: ChatComponent },
+  { path: 'chat', component: ChatComponent, canActivate: [YourGuardGuard] },
   { path: '', component: ToDoComponent, canActivate: [YourGuardGuard] },
   { path: '**', redirectTo: '/' }
 ];

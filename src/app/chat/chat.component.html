@@ -13,7 +13,11 @@
             </label>
 
             <label class="message" *ngIf="message.message">{{message.message}}
-                <p class="time">{{message.time}}</p>
+                <p class="time">
+                    {{message.time}}
+                    <i class="fas fa-check" [ngStyle]="message.mstatus ? {'color': '#c1bad9'} : {'color': 'grey'}"></i>
+                </p>
+
             </label>
         </div>
     </div>
@@ -22,6 +26,11 @@
 
 </div>
 
-<div class="users">
-
+<div class="users" >
+    <label *ngFor="let user of online, index as i">
+        {{user.username}}
+        <p [ngClass]="user.status ? 'green' : 'red'">
+            {{user.status ? 'online' : 'offline, last seen: '}} {{user.time}}
+        </p>
+    </label>
 </div>

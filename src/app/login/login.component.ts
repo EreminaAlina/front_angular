@@ -51,13 +51,13 @@ export class LoginComponent implements OnInit {
             login: ['',
                 [
                     Validators.required,
-                    Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,3}$'),
+                    //Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,3}$'),
                 ]
             ],
             password: ['',
                 [
                     Validators.required,
-                    Validators.pattern("^(?=.*\\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\\s).{6,20}$")
+                   // Validators.pattern("^(?=.*\\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\\s).{6,20}$")
 
                 ]
             ]

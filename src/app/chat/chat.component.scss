@@ -51,7 +51,10 @@
       }
       .message {
         border-radius: 1rem 1rem  0 1rem;
-        background-color: #51af86;;
+        background-color: #454d80;
+        font-size: 16px;
+        padding: 5px 10px;
+        color: white;
             &::before{
               position: absolute;
               content: '';
@@ -61,12 +64,11 @@
               width: 0;
               height: 0;
               border: 10px solid transparent;
-              border-top-color: #51af86;
+              border-top-color: #454d80;
               border-bottom: 0;
               border-left: 0;
               transform: rotate(90deg);
               padding: 5px;
-
             }
       }
     }
@@ -75,18 +77,16 @@
        margin: 0;
        overflow: auto;
        word-break: break-word;
-
-
        &.user{
          font-size: 12px;
          background: none;
        }
        &.message {
-         background: #00e23a;
+         background: #273249;
          border-radius: 1rem 1rem  1rem 0rem;
          font-size: 16px;
          padding: 5px 10px;
-
+         color: white;
          &::before {
            position: absolute;
            content: '';
@@ -95,7 +95,7 @@
            width: 0;
            height: 0;
            border: 10px solid transparent;
-           border-top-color: #00e23a;
+           border-top-color: #273249;
            border-bottom: 0;
            border-left: 0;
            margin-left: -10px;
@@ -115,9 +115,27 @@ input{
 
 .time{
   text-align: end;
-  color: grey;
+  color: #c1bad9;
   font-style: italic;
   margin: 0;
   font-size: 12px;
+
 }
 
+.users{
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  box-shadow: 0 0 5px 1px #00000080;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.fa-check{
+
+  &::before {
+    margin-left: 5px;
+  }
+}

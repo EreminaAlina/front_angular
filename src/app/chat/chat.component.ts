@@ -4,6 +4,8 @@ import {Message} from "../interfaces/message.interface";
 import {SocketIoService} from "../services/socket.io.service";
 import {formatDate} from "@angular/common";
 import {ScrollToBottomDirective} from "../directives/scroll-to-bottom.directive";
+import {faCheck} from '@fortawesome/free-solid-svg-icons';
+
 
 @Component({
     selector: 'chat',
@@ -15,6 +17,10 @@ export class ChatComponent implements OnInit, OnDestroy {
     text: string;
     socketStatus = false;
     userName: string;
+    online = [];
+    readMes = false;
+    faCheck = faCheck;
+
 
     @ViewChild(ScrollToBottomDirective)
     scroll: ScrollToBottomDirective;
@@ -29,6 +35,9 @@ export class ChatComponent implements OnInit, OnDestroy {
             setTimeout(() => {
                 this.scroll.scrollToBottom();
             }, 100);
+            this.messages.forEach(item =>{
+                item.mstatus = true;
+            })
         }, error => {
             console.log('cant get messages');
         });
@@ -43,6 +52,11 @@ export class ChatComponent implements OnInit, OnDestroy {
         this.socketServ.socketStatus.subscribe((status: boolean) => {
             this.socketStatus = status;
         })
+
+        this.socketServ.userSubj.subscribe((users: []) => {
+            this.online = users;
+            console.log(this.online);
+        })
     }
 
     ngOnDestroy(): void {
@@ -50,21 +64,30 @@ export class ChatComponent implements OnInit, OnDestroy {
     }
 
     todos() {
+        this.socketServ && this.socketServ.disconnect();
         return this.router.navigate([''])
     }
 
     logOut() {
         localStorage.clear();
+        this.socketServ && this.socketServ.disconnect();
         return this.router.navigate(['/login'])
     }
 
     sendMessage() {
         const now = new Date();
-        if(this.text.trim()){
+        let count =0;
+        this.online.forEach(item =>{
+            item.status? count++ : count;
+        })
+        count>=2? this.readMes = true: this.readMes = false;
+
+        if (this.text.trim()) {
             const msg = {
                 userName: this.userName,
                 message: this.text,
-                time: formatDate(now, 'HH:mm', 'en_US', 'UTC+3')
+                time: formatDate(now, 'HH:mm', 'en_US', 'UTC+3'),
+                mstatus: this.readMes,
             };
             this.messages.push(msg)
             this.socketServ.sendMsg(msg);
@@ -72,6 +95,7 @@ export class ChatComponent implements OnInit, OnDestroy {
             setTimeout(() => {
                 this.scroll.scrollToBottom();
             }, 100);
+
         }
     }
 
